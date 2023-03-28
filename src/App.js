@@ -9,9 +9,8 @@ import React from "react";
 import axios from "axios";
 import Home from "./pages/Home";
 import Login from "./components/Auth/Login";
-import Frontdesk from "./components/Unit/unit1Osun/Frontdesk";
 import Unit2OsunRoutes from "./routes/authroutes/Unit2OsunRoutes";
-import MoreInfo from "./components/MoreInfo/MoreInfo";
+
 
 
 

@@ -105,3 +105,42 @@ function Frontdesk() {
 }
 
 export default Frontdesk;
+
+
+
+
+https://github.com/Aljullu/react-lazy-load-image-component
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {showDate ? (
+          <button onClick={handleDate} className="btn btn-dark">
+            Show calender
+          </button>
+        ) : (
+          <div className="px-3">
+            <div className="text-end">
+              <code className="text-description mb-4">
+                Search by date
+              </code>
+              <br></br>
+              Selected date: {date.toDateString()}
+            </div>
+            <div className="calendar-container form-control">
+                {/* <button onClick={buttonCalender}> */}
+                  <Calendar onClickMonth={} onc onChange={setDate} value={date} />
+                {/* </button> */}
+            </div>   
+          </div>
+        )}

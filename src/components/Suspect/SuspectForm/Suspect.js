@@ -39,6 +39,8 @@ const Suspect = () => {
     lastname: "",
     gender: "",
     international_passport: "",
+    nin: "",
+    driver:"",
     date_birth: "",
     moblie_phone: "",
     Office_phone: "",
@@ -597,6 +599,11 @@ const Suspect = () => {
     let imageClass_front= new Image();
     imageClass_front.src = image_front
     formData.append("affix_front", image_front);
+
+    formData.append("nin", inputs.nin);
+    formData.append("driver", inputs.driver);
+
+
 
     formData.append("international_passport", inputs.international_passport);
     formData.append("martic_number", martic_number);

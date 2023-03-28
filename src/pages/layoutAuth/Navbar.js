@@ -7,7 +7,7 @@ import { HiUserGroup } from "react-icons/hi";
 import { HiUser } from "react-icons/hi";
 import "./style.css";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const linkname = localStorage.getItem('martic_number')
   let location = useLocation();
   const linkssuspect = [
@@ -23,10 +23,10 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav class="navbar navbar-expand-lg bg-body-tertiary " id="navbar">
-        <div class="container-fluid">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary " id="navbar">
+        <div className="container-fluid">
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarTogglerDemo03"
@@ -34,7 +34,7 @@ const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           <Link
             className="navbar-brand text-light ps-3 bw-bold d-inline"
@@ -42,28 +42,33 @@ const Navbar = () => {
           >
             <img src={nafdac} width="50" height="50" />
           </Link>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item"></li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"></a>
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item"></li>
+              <li className="nav-item">
+                <a className="nav-link" href="#"></a>
               </li>
-              <li class="nav-item"></li>
+              <li className="nav-item"></li>
             </ul>
-            <form class="d-flex" role="search">
+            <div className="d-flex" role="search">
+
+
               <input
-                class="form-control me-2"
+                className="form-control me-2"
                 type="search"
-                placeholder="Search"
+                value={props.details}
+                onChange={props.detailsHanlder}
+                placeholder="search suspect names"
                 aria-label="Search"
               />
               <button
-                class="btn btn-outline-success btn-dark text-light"
+                onClick={props.FindDetails}
+                className="btn btn-outline-success btn-dark text-light"
                 type="submit"
               >
                 <Search />
               </button>
-            </form>
+            </div>
             <div className="mx-4">
               <ul className="nav navbar d-md-flex flex-fill flex-row justify-content-between gap-4 d-none align-baseline">
                 {/* <li>
@@ -129,6 +134,17 @@ const Navbar = () => {
                 </li>
 
 
+                {/* officers */}
+                <li>
+                  {location.pathname === `/unit1Osun/rf/add-suspect-officer/${linkname}` ? <li>
+                    <Link className="dropdown-item" to="/unit1Osun/rf">
+                      <HiUserAdd className="fs-5 text-light" />
+                      <span className="fs-6 mx-1 fw-bold">Back</span>
+                    </Link>
+                  </li> : null}
+                </li>
+                
+                
 
 
               </ul>

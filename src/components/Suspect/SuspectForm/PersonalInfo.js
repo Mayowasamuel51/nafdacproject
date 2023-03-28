@@ -9,9 +9,12 @@ const PersonalInfo = ({
   langs,
   SpokenLang,
   mystate,
+  international_passport,
   changeHandler,
   changeHandler_1,
   changeHandler_2,
+  nin,
+  driver
 }) => {
   return (
     <div className="container">
@@ -159,6 +162,19 @@ const PersonalInfo = ({
               }}
             >
               <div className="mb-1">
+                <p className="text-dark fs-5 mb-2">
+                  NIN
+                </p>
+                <input
+                  type="text"
+                  className="form-control py-3"
+                  aria-describedby="emailHelpId"
+                  placeholder="NIN"
+                  value={inputs.nin}
+                  onChange={checkInput}
+                />
+              </div>
+              <div className="mb-1">
                 <p className="text-dark fs-5 mb-1">Mobile Phone:</p>
                 <input
                   type="number"
@@ -214,7 +230,25 @@ const PersonalInfo = ({
                   type="text"
                   className="form-control py-3"
                   aria-describedby="emailHelpId"
+                  value={inputs.international_passport}
+                  onChange={checkInput}
                   placeholder="Enter Number"
+                />
+              </div>
+
+              
+
+              <div className="mb-1">
+                <p className="text-dark fs-5 mb-2">
+                 Driver
+                </p>
+                <input
+                  type="text"
+                  className="form-control py-3"
+                  aria-describedby="emailHelpId"
+                  placeholder="Driver"
+                  value={inputs.driver}
+                  onChange={checkInput}
                 />
               </div>
 

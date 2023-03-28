@@ -21,7 +21,8 @@ function Dashboard() {
               )
             );
           })}
-          <Redirect from="/unit1Osun" to="/unit1Osun/frontdesk" />
+          {/* <Redirect from="/unit1Osun" to="/unit1Osun/frontdesk" /> */}
+          {/* <Redirect from="/unit1Osun"  /> */}
         </Route>
       </div>
     </>

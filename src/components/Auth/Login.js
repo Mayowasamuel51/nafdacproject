@@ -54,13 +54,20 @@ const Login = () => {
                     // swal("Welcome!", "", "success");
                     notyf.success('welcome');
                 }
-                if (res.data.role === 'rf') {
+               else  if (res.data.role === 'rf') {
                     console.log(res.data)
+                    localStorage.setItem("auth_token", res.data.token);
+                    localStorage.setItem("unitId", res.data.unitId);
+                    localStorage.setItem("role", role);
                     console.log('welcome to rf')
+                    history.push(`/unit1Osun/rf`)
                     notyf.success('welcome as rf');
                 }
 
             }
+
+
+
             if (unit === "unit2Osun") {
                 if (res.data.role === 'frontdesk') {
                     console.log('welcome to frontdesk')
